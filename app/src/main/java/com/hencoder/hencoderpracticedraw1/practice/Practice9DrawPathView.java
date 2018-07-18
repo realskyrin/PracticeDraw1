@@ -31,17 +31,17 @@ public class Practice9DrawPathView extends View {
         float[] points = {20, 20, 120, 20, 70, 20, 70, 120, 20, 120, 120, 120, 150, 20, 250, 20, 150, 20, 150, 120, 250, 20, 250, 120, 150, 120, 250, 120};
         canvas.drawLines(points, new Paint());
 
-        Paint paint = new Paint();
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.RED);
 
         canvas.drawCircle(200,200,130,paint);
-        canvas.drawCircle(430,200,130,paint);
+        canvas.drawCircle(460,200,130,paint);
 
         Path path = new Path();
-        paint.setColor(Color.BLACK);
-        path.moveTo(70,200);
-        path.lineTo(560,200);
-        path.lineTo(310,500);
+        paint.setColor(Color.RED);
+        path.moveTo(80,255);
+        path.lineTo(580,255);
+        path.lineTo(330,550);
         path.close();
         canvas.drawPath(path,paint);
     }

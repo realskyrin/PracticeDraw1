@@ -33,19 +33,27 @@ public class Practice10HistogramView extends View {
         paint.setColor(Color.WHITE);
         paint.setStyle(Paint.Style.STROKE);
 
-        Path path = new Path();
+        Path path = new Path(); //
         path.moveTo(150,20);
         path.lineTo(150,500);
         path.lineTo(900,500);
 
-        // 1
+        canvas.drawPath(path,paint);
+
+        // 柱状图
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.GREEN);
-        path.moveTo(160,500);
-        path.lineTo(160,480);
-        path.lineTo(260,480);
-        path.lineTo(260,500);
+        canvas.drawRect(180,400,280,500,paint);
+        canvas.drawRect(300,80,400,500,paint);
+        canvas.drawRect(420,150,520,500,paint);
 
-        canvas.drawPath(path,paint);
+        // 字
+        paint.setTextSize(22);
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        canvas.drawText("Lolipop",180,520,paint);
+        canvas.drawText("KikTy",300,520,paint);
+        canvas.drawText("Lolipop",420,520,paint);
+
     }
 }
