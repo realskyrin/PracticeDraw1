@@ -13,6 +13,7 @@ import android.view.View;
 public class Practice9DrawPathView extends View {
     Paint paint;
     Path path;
+    Path pathStar;
 
     public Practice9DrawPathView(Context context) {
         super(context);
@@ -39,6 +40,17 @@ public class Practice9DrawPathView extends View {
         path.arcTo(rectF,180,230,false);
         path.lineTo(500,600);
 
+        // star
+        pathStar = new Path();
+        paint.setColor(Color.BLACK);
+        paint.setStyle(Paint.Style.FILL);
+        pathStar.setFillType(Path.FillType.EVEN_ODD);
+        pathStar.moveTo(200,300);
+        pathStar.lineTo(500,300);
+        pathStar.lineTo(230,500);
+        pathStar.lineTo(350,50);
+        pathStar.lineTo(470,500);
+        pathStar.close();
     }
 
     @Override
@@ -46,21 +58,7 @@ public class Practice9DrawPathView extends View {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawPath() 方法画心形
-//        float[] points = {20, 20, 120, 20, 70, 20, 70, 120, 20, 120, 120, 120, 150, 20, 250, 20, 150, 20, 150, 120, 250, 20, 250, 120, 150, 120, 250, 120};
-//        canvas.drawLines(points, new Paint());
-//
-//        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//        paint.setColor(Color.RED);
-//
-//        canvas.drawCircle(200,200,130,paint);
-//        canvas.drawCircle(460,200,130,paint);
-//
-//        Path path = new Path();
-//        paint.setColor(Color.RED);
-//        path.moveTo(80,255);
-//        path.lineTo(580,255);
-//        path.lineTo(330,550);
-//        path.close();
-        canvas.drawPath(path,paint);
+//        canvas.drawPath(path,paint);
+        canvas.drawPath(pathStar,paint);
     }
 }
